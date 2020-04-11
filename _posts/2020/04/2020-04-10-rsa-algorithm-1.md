@@ -141,8 +141,4 @@ M = (5 ^ 11) mod 14
 
 **M = 3** 
 
-
-
-
-
-
+![Alt text](/assets/images/logo.png){: .align-left}
