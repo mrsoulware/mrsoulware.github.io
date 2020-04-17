@@ -68,24 +68,7 @@ $ pmap -p 5252
 0000000000400000      4K r-x-- /home/sircoon/threadtest/threadtest
 0000000000600000      4K r---- /home/sircoon/threadtest/threadtest
 0000000000601000      4K rw--- /home/sircoon/threadtest/threadtest
-00007f1ad3df5000   1804K r-x-- /usr/lib64/libc-2.17.so
-00007f1ad3fb8000   2048K ----- /usr/lib64/libc-2.17.so
-00007f1ad41b8000     16K r---- /usr/lib64/libc-2.17.so
-00007f1ad41bc000      8K rw--- /usr/lib64/libc-2.17.so
-00007f1ad41be000     20K rw---   [ anon ]
-00007f1ad41c3000     92K r-x-- /usr/lib64/libpthread-2.17.so
-00007f1ad41da000   2044K ----- /usr/lib64/libpthread-2.17.so
-00007f1ad43d9000      4K r---- /usr/lib64/libpthread-2.17.so
-00007f1ad43da000      4K rw--- /usr/lib64/libpthread-2.17.so
-00007f1ad43db000     16K rw---   [ anon ]
-00007f1ad43df000    136K r-x-- /usr/lib64/ld-2.17.so
-00007f1ad45f5000     12K rw---   [ anon ]
-00007f1ad45fe000      8K rw---   [ anon ]
-00007f1ad4600000      4K r---- /usr/lib64/ld-2.17.so
-00007f1ad4601000      4K rw--- /usr/lib64/ld-2.17.so
-00007f1ad4602000      4K rw---   [ anon ]
-00007fff0cec6000    132K rw---   [ stack ]
-00007fff0cf32000      8K r-x--   [ anon ]
+...
 ffffffffff600000      4K r-x--   [ anon ]
  total             6380K
 ```
@@ -101,29 +84,12 @@ $ pmap -p 5253
 0000000002480000    132K rw---   [ anon ]
 00007f37cbe2a000      4K -----   [ anon ]
 00007f37cbe2b000   8192K rw---   [ anon ]
-00007f37cc62b000   1804K r-x-- /usr/lib64/libc-2.17.so
-00007f37cc7ee000   2048K ----- /usr/lib64/libc-2.17.so
-00007f37cc9ee000     16K r---- /usr/lib64/libc-2.17.so
-00007f37cc9f2000      8K rw--- /usr/lib64/libc-2.17.so
-00007f37cc9f4000     20K rw---   [ anon ]
-00007f37cc9f9000     92K r-x-- /usr/lib64/libpthread-2.17.so
-00007f37cca10000   2044K ----- /usr/lib64/libpthread-2.17.so
-00007f37ccc0f000      4K r---- /usr/lib64/libpthread-2.17.so
-00007f37ccc10000      4K rw--- /usr/lib64/libpthread-2.17.so
-00007f37ccc11000     16K rw---   [ anon ]
-00007f37ccc15000    136K r-x-- /usr/lib64/ld-2.17.so
-00007f37cce2b000     12K rw---   [ anon ]
-00007f37cce34000      8K rw---   [ anon ]
-00007f37cce36000      4K r---- /usr/lib64/ld-2.17.so
-00007f37cce37000      4K rw--- /usr/lib64/ld-2.17.so
-00007f37cce38000      4K rw---   [ anon ]
-00007fffc9713000    132K rw---   [ stack ]
-00007fffc979f000      8K r-x--   [ anon ]
+...
 ffffffffff600000      4K r-x--   [ anon ]
  total            14708K
 ```
 
-의심스러운 메모리 영역
+2개를 비교해보면, 스레드를 생성했을 경우에 다음과 같이 추가된 메모리 영역이 존재함을 알수 있다.
 
 ```bash
 0000000002480000    132K rw---   [ anon ]
@@ -131,40 +97,19 @@ ffffffffff600000      4K r-x--   [ anon ]
 00007f37cbe2b000   8192K rw---   [ anon ]
 ```
 
-메모리 범위 찾아보기
+위 메모리 영역 중 첫번째의 범위는 다음과 같이 계산하여 알수 있다.
+
+0x2480000 + 132K (132 * 1024 = 0x21000) = 0x24a1000
+
+/proc/pid/maps 파일을 보아도 알 수 있다.
 
 ```bash
 $ cat /proc/5253/maps
-00400000-00401000 r-xp 00000000 fd:02 128582                             /home/sircoon/threadtest/threadtest
-00600000-00601000 r--p 00000000 fd:02 128582                             /home/sircoon/threadtest/threadtest
-00601000-00602000 rw-p 00001000 fd:02 128582                             /home/sircoon/threadtest/threadtest
-02480000-024a1000 rw-p 00000000 00:00 0                                  [heap]
+...
+02480000-024a1000 rw-p 00000000 00:00 0                        [heap]
 7f37cbe2a000-7f37cbe2b000 ---p 00000000 00:00 0 
 7f37cbe2b000-7f37cc62b000 rw-p 00000000 00:00 0 
-7f37cc62b000-7f37cc7ee000 r-xp 00000000 fd:00 33572293                   /usr/lib64/libc-2.17.so
-7f37cc7ee000-7f37cc9ee000 ---p 001c3000 fd:00 33572293                   /usr/lib64/libc-2.17.so
-7f37cc9ee000-7f37cc9f2000 r--p 001c3000 fd:00 33572293                   /usr/lib64/libc-2.17.so
-7f37cc9f2000-7f37cc9f4000 rw-p 001c7000 fd:00 33572293                   /usr/lib64/libc-2.17.so
-7f37cc9f4000-7f37cc9f9000 rw-p 00000000 00:00 0 
-7f37cc9f9000-7f37cca10000 r-xp 00000000 fd:00 33556294                   /usr/lib64/libpthread-2.17.so
-7f37cca10000-7f37ccc0f000 ---p 00017000 fd:00 33556294                   /usr/lib64/libpthread-2.17.so
-7f37ccc0f000-7f37ccc10000 r--p 00016000 fd:00 33556294                   /usr/lib64/libpthread-2.17.so
-7f37ccc10000-7f37ccc11000 rw-p 00017000 fd:00 33556294                   /usr/lib64/libpthread-2.17.so
-7f37ccc11000-7f37ccc15000 rw-p 00000000 00:00 0 
-7f37ccc15000-7f37ccc37000 r-xp 00000000 fd:00 33565929                   /usr/lib64/ld-2.17.so
-7f37cce2b000-7f37cce2e000 rw-p 00000000 00:00 0 
-7f37cce34000-7f37cce36000 rw-p 00000000 00:00 0 
-7f37cce36000-7f37cce37000 r--p 00021000 fd:00 33565929                   /usr/lib64/ld-2.17.so
-7f37cce37000-7f37cce38000 rw-p 00022000 fd:00 33565929                   /usr/lib64/ld-2.17.so
-7f37cce38000-7f37cce39000 rw-p 00000000 00:00 0 
-7fffc9713000-7fffc9734000 rw-p 00000000 00:00 0                          [stack]
-7fffc979f000-7fffc97a1000 r-xp 00000000 00:00 0                          [vdso]
-ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
-
-
-02480000-024a1000 rw-p 00000000 00:00 0                                  [heap]
-7f37cbe2a000-7f37cbe2b000 ---p 00000000 00:00 0 
-7f37cbe2b000-7f37cc62b000 rw-p 00000000 00:00 0 
+...
 ```
 
 다음과 같이 GDB를 통해 3개 영역의 메모리를 파일로 덤프 받는다.
@@ -176,7 +121,7 @@ $ gdb -p 5253
 (gdb) dump memory 3.dmp 0x7f37cbe2b000 0x7f37cc62b000
 ```
 
-문자열 검색
+덤프 파일에 어떤 문자열이 있는지 찾아보자.
 
 ```bash
 $ strings 1.dmp
@@ -188,4 +133,17 @@ Hello,world!
 Thread End
 pid =
 ```
+3번째 영역에 문자열을 보면 thread_start() 함수안의 내용이 출력되고 있다.
 
+pthread_create() 함수는 별도 쓰레드의 스택을 위한 메모리를 힙에 할당한다.
+할당된 메모리는 쓰레드가 종료되더라도 회수되지 않으며, pthread_join()과 같은 함수를 호출하여 자원을 회수해야 한다.
+예제 프로그램에서는 회수 과정을 가지지 않았기 때문에 이 메모리가 남아 있게 되는 것이다.
+
+참고로, 할당된 메모리의 크기는 8192K 였다. 이것은 시스템의 기본 stack size와 일치함을 알수 있다.
+
+```bash
+$ ulimit -a
+...
+stack size              (kbytes, -s) 8192
+...
+```
