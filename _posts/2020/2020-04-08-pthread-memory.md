@@ -1,7 +1,7 @@
 ---
 title: posix thread 와 memory 분석
 categories:
-  - multithread programming
+  - multithread
 tags:
   - pthread
   - pmap

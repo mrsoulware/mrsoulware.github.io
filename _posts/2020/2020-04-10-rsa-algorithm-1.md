@@ -1,6 +1,9 @@
 ---
 title: RSA 암호화 알고리즘 (1)
-tags: RSA
+categories:
+  - algorithm
+tags:
+  - RSA
 toc: true
 ---
 
