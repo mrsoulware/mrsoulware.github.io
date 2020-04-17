@@ -6,6 +6,7 @@ tags:
   - pthread
   - pmap
 toc: true
+classes: wide
 ---
 
 메모리 분석 방법 중 하나를 통해, POSIX 쓰레드에서 신규 쓰레드를 생성시 할당되는 메모리에 대해서 알아보자.
