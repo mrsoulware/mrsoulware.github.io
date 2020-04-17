@@ -198,7 +198,13 @@ main(int argc, char **argv) {
     int exp = atoi(argv[2]);
     int mod = atoi(argv[3]);
     int remain = modular_exp(base, exp, mod);
-    printf("modular_exp(%d, %d, %d) = %d\n", base, exp, mod, remain);
+    printf("(%d ^ %d) mod %d = %d\n",
+        base, exp, mod, remain);
     return 0;
 }
+```
+
+```
+./test_modular_exp 5 27 19
+(5 ^ 27) mod 19 = 1
 ```
