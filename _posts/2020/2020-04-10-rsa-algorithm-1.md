@@ -5,6 +5,7 @@ categories:
 tags:
   - RSA
 toc: true
+classes: wide
 ---
 
 RSA는 큰 숫자를 소인수 분해하는 것이 어렵다는 것에 기반한 공개키 방식의 암호 알고리즘이다.
