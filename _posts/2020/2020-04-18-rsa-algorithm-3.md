@@ -9,7 +9,7 @@ toc: true
 
 1
 
-[post]({% _posts/2020/2020-04-10-rsa-algorithm-1.md %})
+[post](/algorithm/rsa-algorithm-3/)
 
 1
 RSA 암호화 알고리즘 (1) 포스트의 4단계에서 다음 조건을 만족하는 e값을 구해야 했다.
