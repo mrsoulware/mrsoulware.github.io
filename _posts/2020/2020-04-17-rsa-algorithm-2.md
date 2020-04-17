@@ -172,34 +172,33 @@ RD = (17 * (9 mod 19)) mod 19 = 1
 int
 modular_exp(int base, int exp, int mod)
 {
-	// mod값은 (mod - 1)^2 연산시 오버플로우 되지 않을만큼 작다고 가정
-	
-	int result = 1;
+    // mod값은 (mod - 1)^2 연산시 오버플로우 되지 않을만큼 작다고 가정
+    
+    int result = 1;
 
-	if (mod == 1) {
-		return 0;
-	}
+    if (mod == 1) {
+        return 0;
+    }
 
-	base = base % mod;
-	while (exp > 0) {
-		if (exp & 0x1) {
-			result = (result * base) % mod;
-		}
-		exp = exp >> 1;
-		base = (base * base) % mod;
-	}
-	return result;
+    base = base % mod;
+    while (exp > 0) {
+        if (exp & 0x1) {
+            result = (result * base) % mod;
+        }
+        exp = exp >> 1;
+        base = (base * base) % mod;
+    }
+    return result;
 }
 
 int
 main(int argc, char **argv) {
 
-	int base = atoi(argv[1]);
-	int exp = atoi(argv[2]);
-	int mod = atoi(argv[3]);
-	int remain = modular_exp(base, exp, mod);
-	printf("modular_exp(%d, %d, %d) = %d\n", base, exp, mod, remain);
-	return 0;
+    int base = atoi(argv[1]);
+    int exp = atoi(argv[2]);
+    int mod = atoi(argv[3]);
+    int remain = modular_exp(base, exp, mod);
+    printf("modular_exp(%d, %d, %d) = %d\n", base, exp, mod, remain);
+    return 0;
 }
-
 ```
