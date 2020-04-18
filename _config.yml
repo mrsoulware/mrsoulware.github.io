@@ -96,12 +96,12 @@ author:
   name             : "Mr.Sircoon"
   avatar           : "/assets/images/avatar.png"
   bio              : "Computer Programmer"
-  location         : "Somewhere OTR"
-  email            :
+  location         : "KOREA"
+  email            : "sircoon@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: mailto:sircoon@gmail.com
+      # url:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -123,13 +123,13 @@ footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      # url:
+      url: "https://twitter.com/sircoon1"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: https://github.com/mrsoulware
+      url: "https://github.com/mrsoulware"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
