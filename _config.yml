@@ -97,11 +97,11 @@ author:
   avatar           : "/assets/images/avatar.png"
   bio              : "Computer Programmer"
   location         : "KOREA"
-  email            : "sircoon@gmail.com"
+  email            : 
   links:
-    - label: "Email"
+    - label: "Mail"
       icon: "fas fa-fw fa-envelope-square"
-      # url:
+      url: "sircoon@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
