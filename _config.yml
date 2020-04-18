@@ -99,8 +99,10 @@ author:
   location         : "KOREA"
   email            : 
   links:
-    - label: "Mail"
-      icon: "fas fa-fw fa-envelope-square"
+#    - label: "Email"
+    - label: "Gmail"
+#      icon: "fas fa-fw fa-envelope-square"
+      icon: "fas fa-fw fa-envelope"
       url: "mailto:sircoon@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
