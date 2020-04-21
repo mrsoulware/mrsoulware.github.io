@@ -119,9 +119,9 @@ main(int argc, char **argv)
 }
 ```
 ```
-$ ./isprime 19 3
+$ ./test_prime 19 3
 19 는 아마도 소수일 것이다.
-$ ./isprime 39 3
+$ ./test_prime 39 3
 39 는 합성수이다.
 ```
 

@@ -206,6 +206,6 @@ main(int argc, char **argv) {
 ```
 
 ```
-./test_modular_exp 5 27 19
+$ ./test_modular_exp 5 27 19
 (5 ^ 27) mod 19 = 1
 ```
