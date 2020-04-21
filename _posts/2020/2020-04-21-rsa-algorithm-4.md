@@ -17,16 +17,14 @@ RSA 알고리즘에서는 키를 생성하기 위한 첫번째 단계가 임의�
 이것은 합성수(composite number)를 체로 거르듯이 제거하여 최종적으로 남은 수가 소수라고 판단하는 방법이다.
 
 이 방법들 모두 정확하게 소수를 판단할 수 있지만, 2^1024 와 같이 큰 수를 판단하기에는 너무 많은 계산이 필요하다.
+예를 들어 2^1024는 16진수로 표기하면 다음과 같다. RSA는 이 정도의 큰 수를 다룬다.
 
-2^1024는 16진수로 표기하면 다음과 같다.
 ```
 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
   FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
   FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
   FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 ```
-RSA는 이 정도의 큰 수를 다룬다.
-{: .notice--info}
 
 # 페르마의 소정리 (Fermat's little theorem)
 
