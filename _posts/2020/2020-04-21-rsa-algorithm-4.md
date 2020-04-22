@@ -4,8 +4,6 @@ categories:
   - algorithm
 tags:
   - RSA
-toc: true
-classes: wide
 ---
 
 RSA 알고리즘에서는 키를 생성하기 위한 첫번째 단계가 임의의 소수 p,q를 정하는 것이다.

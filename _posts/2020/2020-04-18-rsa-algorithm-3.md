@@ -4,8 +4,6 @@ categories:
   - algorithm
 tags:
   - RSA
-toc: true
-classes: wide
 ---
 
 [RSA 암호화 알고리즘 (1)](/algorithm/rsa-algorithm-1) 포스트의 4단계에서 다음 조건을 만족하는 e값을 구해야 했다.

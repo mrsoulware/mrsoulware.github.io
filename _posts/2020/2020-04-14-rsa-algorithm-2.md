@@ -4,8 +4,6 @@ categories:
   - algorithm
 tags:
   - RSA
-toc: true
-classes: wide
 ---
 
 이전 포스트 [RSA 암호화 알고리즘 (1)](/algorithm/rsa-algorithm-1) 예제의 8단계에서는 `(5 ^ 11) mod 14` 와 같은 연산을 하는 과정이 있었다.
