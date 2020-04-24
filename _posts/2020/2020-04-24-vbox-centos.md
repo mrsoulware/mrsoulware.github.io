@@ -171,7 +171,9 @@ root 로 로그인 해보자.
 
 # 네트워크 활성화
 
-나머지 과정을 편리하게 진행하기 위해, 먼저 어댑터2(ifcfg-enp0s8)를 설정하고 리부팅한다.
+나머지 과정을 편리하게 진행하기 위해, 먼저 어댑터2(ifcfg-enp0s8)를 설정한다.
+IP 192.168.56.100 의 끝자리 100은 다른 숫자로 변경해도 된다.
+VM을 추가로 설치할 경우에 겹치지만 않도록 하자.
 
 ```
 $ vi /etc/sysconfig/network-scripts/ifcfg-enp0s8
@@ -182,14 +184,18 @@ ONBOOT=yes
 NETMASK=255.255.255.0
 IPADDR=192.168.56.100
 ```
+
+실제 반영을 위해서는 아래와 같이 네트워크 매니저를 재시작한다.
+
 ```
-$ reboot
+$ systemctl restart NetworkManager
 ```
 
-IP 192.168.56.100 의 끝자리 100은 다른 숫자로 변경해도 된다.
-VM을 추가로 설치할 경우에 겹치지 않도록 IP를 배정한다.
+**잠깐** : 위 명령은 CentOS 8 기준이다.
+CentOS 7에서는 `systemctl restart network`이며, CentOS 6 이하에서는 `service network restart`이다.
+{: .notice--warning}
 
-리부팅 후 PC에 설치된 터미널 프로그램(putty 등)으로 ssh(root@192.168.56.100) 접속을 해보자.
+PC에 설치된 터미널 프로그램(putty 등)으로 ssh(root@192.168.56.100) 접속을 해보자.
 지금부터는 터미널프로그램에서 나머지 설정을 진행할 수 있다.
  
 어댑터3(ifcfg-enp0s9)를 다음과 같이 설정한다. IP의 끝자리는 일관성을 위해 두번째 어댑터의 설정과 동일(예제 기준 100)하게 하는 것이 좋겠다.
@@ -215,9 +221,10 @@ ONBOOT=yes
 dhcp로 설정하게 되면 IP, DNS, GATEWAY 등 다소 어려울수 있는 설정을 자동으로 잡아준다.
 {: .notice--warning}
 
-변경한 설정값을 반영하기 위해 다음 명령을 실행한다.
+역시 변경한 설정값을 반영하기 위해 다음 명령을 실행한다.
+
 ```
-$ systemctl restart network
+$ systemctl restart NetworkManager
 ```
 
 # 기타 설정
