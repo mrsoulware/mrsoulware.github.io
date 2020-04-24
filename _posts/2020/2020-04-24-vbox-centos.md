@@ -80,7 +80,7 @@ DB서버와 WAS서버 용도로 VM을 각각 만들어 연결하는 경우를 �
 
 위 3가지의 네트워크 환경을 설정해 보도록 하자.
 
-![](/assets/images/vbox-cent4.png)
+![](/assets/images/vbox-cent24.png)
 
 생성한 VM을 선택하고 **설정**을 누른다.
 
