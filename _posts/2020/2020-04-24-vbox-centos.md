@@ -15,7 +15,7 @@ tags:
 
 # VirtualBox 설치
 
-먼저 [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads) 에서 VirtualBox 설치 파일을 다운로드 받는다.
+먼저 [VirtualBox 다운로드 페이지](https://www.virtualbox.org/wiki/Downloads)에서 VirtualBox 설치 파일을 다운로드 받는다.
 해당 페이지의 링크 중 **"Windows hosts"**가 윈도우즈용 설치파일이다.
 참고로, 호스트(host) OS는 VirtualBox를 설치하는 OS를 의미한다.
 반대로 VirtualBox에 VM를 만들고 설치한 OS는 게스트(guest) OS라고 한다.
@@ -102,7 +102,7 @@ DB서버와 WAS서버 용도로 VM을 각각 만들어 연결하는 경우를 �
 # CentOS 설치
 
 이제 CentOS 설치를 시작해 보자. 
-[https://www.centos.org/download/](https://www.centos.org/download/) 페이지에서 **CentOS Linux DVD ISO**(ex. CentOS-8.1.1911-x86_64-dvd1.iso) 파일을 다운로드 받는다.
+[CentOS 다운로드 페이지](https://www.centos.org/download/)에서 **CentOS Linux DVD ISO** (`ex. CentOS-8.1.1911-x86_64-dvd1.iso`) 파일을 다운로드 받는다.
 
 다운로드가 완료되었으면, 생성한 VM을 선택하고 **설정** 화면을 열어보자.
 
