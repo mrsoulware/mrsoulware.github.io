@@ -3,8 +3,8 @@ title: 본쉘(Bourne shell)에서 배열(array) 처리 방법
 categories:
   - Shell Script Programming
 tags:
-  - 본쉘
   - Bourne shell
+  - Array
 ---
 
 모든 프로그래밍 언어와 쉘(bash, ksh 등)에서는 배열 변수를 지원한다.
