@@ -1,7 +1,7 @@
 ---
 title: RSA 암호화 알고리즘 (2)
 categories:
-  - algorithm
+  - Algorithm
 tags:
   - RSA
 ---

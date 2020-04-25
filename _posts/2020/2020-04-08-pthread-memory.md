@@ -1,7 +1,7 @@
 ---
 title: posix thread 와 memory 분석
 categories:
-  - multithread
+  - Multithreading
 tags:
   - pthread
   - pmap
@@ -59,7 +59,7 @@ main(int argc, char **argv)
 
 `pmap -p <pid>` 명령을 실행하여 프로세스별 메모리를 살펴보자.
 
-스레드를 생성하지 않은 프로세스의 메모리이다.
+쓰레드를 생성하지 않은 프로세스의 메모리이다.
 
 ```bash
 $ pmap -p 5252
@@ -72,7 +72,7 @@ ffffffffff600000      4K r-x--   [ anon ]
  total             6380K
 ```
 
-스레드를 1개 생성한 프로세스의 메모리이다.
+쓰레드를 1개 생성한 프로세스의 메모리이다.
 
 ```bash
 $ pmap -p 5253
@@ -88,7 +88,7 @@ ffffffffff600000      4K r-x--   [ anon ]
  total            14708K
 ```
 
-2개를 비교해보면, 스레드를 생성했을 경우에 다음과 같이 추가된 메모리 영역이 존재함을 알수 있다.
+2개를 비교해보면, 쓰레드를 생성했을 경우에 다음과 같이 추가된 메모리 영역이 존재함을 알수 있다.
 
 ```bash
 0000000002480000    132K rw---   [ anon ]
