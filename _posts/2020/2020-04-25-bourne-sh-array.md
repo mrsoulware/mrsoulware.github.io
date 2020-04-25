@@ -30,7 +30,7 @@ echo "arg cnt = $#"
 
 ```
 $ ./ex1.sh one two
-cmd = ./arg.sh
+cmd = ./ex1.sh
 arg1 = one
 arg2 = two
 arg cnt = 2
