@@ -1,5 +1,5 @@
 ---
-title: 본쉘(Bourne shell)에서 배열(array) 처리 방법
+title: Bourne shell에서 Array 처리 방법
 categories:
   - Shell Script Programming
 tags:
