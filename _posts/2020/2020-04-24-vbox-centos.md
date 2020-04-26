@@ -1,5 +1,5 @@
 ---
-title: VirtualBox 와 CentOS 리눅스 설치하기
+title: VirtualBox와 CentOS Linux 설치하기
 categories:
   - Development Environment
 tags:
