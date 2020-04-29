@@ -4,7 +4,6 @@ categories:
   - Shell Script
 tags:
   - Bourne shell
-  - Array
 ---
 
 모든 프로그래밍 언어와 쉘(bash, ksh 등)에서는 배열 변수를 지원한다.
