@@ -4,6 +4,7 @@ categories:
   - Development Environment
 tags:
   - MariaDB
+  - CentOS
 ---
 
 개발 환경에 사용하기 위한 아주 간단하고 일반적인 MariaDB의 설치 및 기본 설정 과정을 알아보자.
