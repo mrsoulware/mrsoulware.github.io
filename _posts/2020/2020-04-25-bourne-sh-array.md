@@ -1,7 +1,7 @@
 ---
 title: Bourne shell에서 Array 처리 방법
 categories:
-  - Shell Script Programming
+  - Shell Script
 tags:
   - Bourne shell
   - Array
