@@ -17,7 +17,7 @@ PC와 달리 서버 운영체제는 기업 내부의 폐쇄망에서 사용되�
 # Windows XP 지원 설치
 
 기본 옵션으로 Visual Studio를 설치하면 XP용 바이너리 파일을 만들수 없다.
-Visual Studio Installer를 실행하여 다음 화면과 같이 **C++용 윈도우즈 XP 지원**을 추가로 설치하면 된다.
+Visual Studio Installer를 실행하여 다음 화면과 같이 **C++용 윈도우즈 XP 지원**을 추가로 설치해야 한다.
 Visual Studio 2017 기준인데, 필자가 설치해보니 무료 버전인 Visual Studio Community에서는 해당 지원이 없는 것으로 보였다.
 
 ![](/assets/images/vs-xp-support.png)
