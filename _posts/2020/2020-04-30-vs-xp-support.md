@@ -28,7 +28,9 @@ GUI에서는 간단하게 해당 프로젝트 속성의 플랫폼 도구 집합 
 커맨드라인(Command line) 방식으로 빌드하는 경우에는 명령 프롬프트를 실행하고 다음과 같은 명령을 실행해주어야 한다.
 
 **32비트 바이너리 생성용**
-```
+```bat
+@rem set-env-xp32.bat
+
 "%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Professional\VC\Auxiliary\Build\vcvars32.bat"
 
 if "%INCLUDE%" == "" (
@@ -59,7 +61,9 @@ if "%LINK%" == "" (
 ```
 
 **64비트 바이너리 생성용**
-```
+```bat
+@rem set-env-xp64.bat
+
 "%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Professional\VC\Auxiliary\Build\vcvarsx86_amd64.bat"
 
 if "%INCLUDE%" == "" (
