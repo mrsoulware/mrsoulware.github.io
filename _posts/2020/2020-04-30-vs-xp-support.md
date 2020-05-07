@@ -33,31 +33,19 @@ GUI에서는 간단하게 해당 프로젝트 속성의 플랫폼 도구 집합 
 
 "%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Professional\VC\Auxiliary\Build\vcvars32.bat"
 
-if "%INCLUDE%" == "" (
-    set INCLUDE=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Include
-) else (
-    set INCLUDE=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Include;%INCLUDE%
-)
-if "%PATH%" == "" (
-    set PATH=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Bin
-) else (
-    set PATH=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Bin;%PATH%
-)
-if "%LIB%" == "" (
-    set LIB=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Lib
-) else (
-    set LIB=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Lib;%LIB%
-)
+set PATH=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Bin;%PATH%
+set INCLUDE=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Include;%INCLUDE%
+set LIB=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Lib;%LIB%
+
 if "%CL%" == "" (
-    set CL=/D_USING_V110_SDK71_
-) else (
-    set CL=/D_USING_V110_SDK71_;%CL%
+    set CL=
 )
+set CL=/D_USING_V110_SDK71_;%CL%
+
 if "%LINK%" == "" (
-    set LINK=/SUBSYSTEM:CONSOLE,5.01
-) else (
-    set LINK=/SUBSYSTEM:CONSOLE,5.01 %LINK%
+    set LINK=
 )
+set LINK=/SUBSYSTEM:CONSOLE,5.01 %LINK%
 ```
 
 **64비트 바이너리 생성용**
@@ -66,31 +54,19 @@ if "%LINK%" == "" (
 
 "%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Professional\VC\Auxiliary\Build\vcvarsx86_amd64.bat"
 
-if "%INCLUDE%" == "" (
-    set INCLUDE=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Include
-) else (
-    set INCLUDE=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Include;%INCLUDE%
-)
-if "%PATH%" == "" (
-    set PATH=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Bin
-) else (
-    set PATH=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Bin;%PATH%
-)
-if "%LIB%" == "" (
-    set LIB=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Lib\x64
-) else (
-    set LIB=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Lib\x64;%LIB%
-)
+set PATH=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Bin;%PATH%
+set INCLUDE=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Include;%INCLUDE%
+set LIB=%ProgramFiles(x86)%\Microsoft SDKs\Windows\7.1A\Lib\x64;%LIB%
+
 if "%CL%" == "" (
-    set CL=/D_USING_V110_SDK71_
-) else (
-    set CL=/D_USING_V110_SDK71_;%CL%
+    set CL=
 )
+set CL=/D_USING_V110_SDK71_;%CL%
+
 if "%LINK%" == "" (
-    set LINK=/SUBSYSTEM:CONSOLE,5.02
-) else (
-    set LINK=/SUBSYSTEM:CONSOLE,5.02 %LINK%
+    set LINK=
 )
+set LINK=/SUBSYSTEM:CONSOLE,5.02 %LINK%
 ```
 
 명령 프롬프트를 새로 실행할 때마다 수행해 줘야 하므로 배치 파일로 저장해두고 사용하는 것이 편리할 것이다.
