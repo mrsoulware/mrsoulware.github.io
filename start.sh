@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ "$1" = "l" ]; then
-	bundle exec jekyll serve
-else
+if [ "$1" = "h" ]; then
 	bundle exec jekyll serve -H 192.168.56.31
+else
+	bundle exec jekyll serve
 fi
