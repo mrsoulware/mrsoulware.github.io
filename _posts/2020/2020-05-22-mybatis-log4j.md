@@ -5,7 +5,6 @@ categories:
 tags:
   - MyBatis
   - Log4j
-  - Log4j2
 ---
 
 MyBatis를 사용하여 개발하다보면 실제 실행된 SQL등을 확인하기 위해 로그를 설정하여 사용하는 경우가 많다.
