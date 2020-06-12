@@ -233,9 +233,6 @@ lower_case_table_names=1
 **주의** : 이미 생성된 테이블은 적용되지 않으므로 rename하거나 재생성한다.
 {: .notice--warning}
 
-```
-- show variables like 'lower_case_table_names'; 로 확인해서 0이면 대소문자 구분하는 것
-```
 
 ## 방화벽 설정
 
